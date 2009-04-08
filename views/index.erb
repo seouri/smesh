@@ -15,7 +15,9 @@
   border: 0.2em solid #555;
   padding:0 0.25em;
   margin:0;
-  height:1.39em;
+  height:1.38em;
+  display:block;
+  float:left;
 }
 #q:focus {
   background-color: #eee;
@@ -41,7 +43,9 @@
 <div class="yui-g">
 
 <form>
+<div>
 <input type="text" name="q" id="q" value="<%= params[:q] %>" onfocus="select()"> <input type="submit" value="search" id="search">
+</div>
 </form>
 <% if @suggestions %>
 <div id="suggestions">
