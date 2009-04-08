@@ -11,28 +11,39 @@
 }
 #q {
   font-size:153.9%;
+  width: 13em;
   border: 3px solid #555;
   padding:3px;
 }
 #q:focus {
   background-color: #eee;
 }
+#search {
+  font-size:153.9%;
+  border: 3px solid #555;
+  padding:0 0.5em;
+  background-color:#555;
+  height:1.81em;
+  color:#fff;
+}
+#suggestions {
+  font-size:116%;
+}
 </style>
 </head>
 <body>
-<div id="doc" class="yui-t7">
+<div id="doc3" class="yui-t7">
 <div id="hd" role="banner"><h1>MeSH Suggestions</h1></div>
 <div id="bd" role="main">
 <div class="yui-g">
 
 <form>
-<input type="text" name="q" id="q" value="<%= params[:q] %>" size="40" onfocus="select()">
-<input type="submit" value="search">
+<input type="text" name="q" id="q" value="<%= params[:q] %>" onfocus="select()">
+<input type="submit" value="search" id="search">
 </form>
 <% if @suggestions %>
 <div id="suggestions">
-<h1>MeSH Suggestions for <em><%= params[:q] %></em></h1>
-<strong><%= @articles_count %> article(s)</strong>
+<h2>Top 10 major topics in top <%= @articles_count %> article(s)</h2>
 <ol>
 <% @suggestions.each do |s| %>
   <li><a href="http://www.ncbi.nlm.nih.gov/sites/entrez?db=mesh&EntrezSystem2.PEntrez.Mesh.SearchBar.Term=<%= s[0] %>" target="_blank"><%= s[0] %></a> [<%= s[1] %>]</li>
