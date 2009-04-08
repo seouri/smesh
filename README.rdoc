@@ -1,6 +1,8 @@
 == Install
-* [sudo] gem install bio
-* [sudo] gem install sinatra
-* git clone git://github.com/seouri/mesh-suggestions.git
-* cd mesh-suggestions
-* ruby suggest.rb
+  $ [sudo] gem install bio
+  $ [sudo] gem install sinatra
+  $ git clone git://github.com/seouri/mesh-suggestions.git
+  $ cd mesh-suggestions
+  $ ruby suggest.rb
+
+open http://localhost:4567 in a browser
