@@ -12,18 +12,21 @@
 #q {
   font-size:153.9%;
   width: 13em;
-  border: 3px solid #555;
-  padding:3px;
+  border: 0.2em solid #555;
+  padding:0 0.25em;
+  margin:0;
+  height:1.39em;
 }
 #q:focus {
   background-color: #eee;
 }
 #search {
   font-size:153.9%;
-  border: 3px solid #555;
+  border: 0;
   padding:0 0.5em;
+  margin:0;
+  height:1.75em;
   background-color:#555;
-  height:1.79em;
   color:#fff;
 }
 #suggestions {
@@ -38,8 +41,7 @@
 <div class="yui-g">
 
 <form>
-<input type="text" name="q" id="q" value="<%= params[:q] %>" onfocus="select()">
-<input type="submit" value="search" id="search">
+<input type="text" name="q" id="q" value="<%= params[:q] %>" onfocus="select()"> <input type="submit" value="search" id="search">
 </form>
 <% if @suggestions %>
 <div id="suggestions">
