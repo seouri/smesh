@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+ "http://www.w3.org/TR/html4/strict.dtd">
+ <html>
+ <head>
+<title>MeSH Suggestions</title>
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.7.0/build/reset-fonts-grids/reset-fonts-grids.css&2.7.0/build/base/base-min.css">
+<style type="text/css">
+#q {
+  font-size:153.9%;
+  border: 3px solid #555;
+  padding:3px;
+}
+#q:focus {
+  background-color: #eee;
+}
+</style>
+</head>
+<body>
+<div id="doc" class="yui-t7">
+<div id="hd" role="banner"></div>
+<div id="bd" role="main">
+<div class="yui-g">
+
+<form>
+<input type="text" name="q" id="q" value="<%= params[:q] %>" size="40" onfocus="select()">
+<input type="submit" value="search">
+</form>
+<% if @suggestions %>
+<h1>MeSH Suggestions for <em><%= params[:q] %></em></h1>
+<strong><%= @articles_count %> article(s)</strong>
+<ol>
+<% @suggestions.each do |s| %>
+  <li><a href="http://www.ncbi.nlm.nih.gov/sites/entrez?db=mesh&EntrezSystem2.PEntrez.Mesh.SearchBar.Term=<%= s[0] %>" target="_blank"><%= s[0] %></a> [<%= s[1] %>]</li>
+<% end %>
+</ol>
+
+<h4>See also:</h4>
+<ul>
+  <li><a href="http://en.wikipedia.org/wiki/<%= params[:q] %>" target="_blank">Search <%= params[:q] %> in Wikipedia</a></li>
+  <li><a href="http://www.google.com/search?q=<%= params[:q] %>" target="_blank">Search <%= params[:q] %> in Google</a></li>
+</ul>
+<% end %>
+
+</div>
+</div>
+<div id="ft" role="contentinfo"></div>
+</div>
+</body>
+</html>
