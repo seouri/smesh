@@ -5,6 +5,10 @@
 <title>MeSH Suggestions</title>
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.7.0/build/reset-fonts-grids/reset-fonts-grids.css&2.7.0/build/base/base-min.css">
 <style type="text/css">
+#hd h1 {
+  font-size:197%;
+  color:#555;
+}
 #q {
   font-size:153.9%;
   border: 3px solid #555;
@@ -17,7 +21,7 @@
 </head>
 <body>
 <div id="doc" class="yui-t7">
-<div id="hd" role="banner"></div>
+<div id="hd" role="banner"><h1>MeSH Suggestions</h1></div>
 <div id="bd" role="main">
 <div class="yui-g">
 
@@ -26,6 +30,7 @@
 <input type="submit" value="search">
 </form>
 <% if @suggestions %>
+<div id="suggestions">
 <h1>MeSH Suggestions for <em><%= params[:q] %></em></h1>
 <strong><%= @articles_count %> article(s)</strong>
 <ol>
@@ -40,10 +45,10 @@
   <li><a href="http://www.google.com/search?q=<%= params[:q] %>" target="_blank">Search <%= params[:q] %> in Google</a></li>
 </ul>
 <% end %>
-
-</div>
-</div>
+</div><!- #suggestions -->
+</div><!-- .yui-g -->
+</div><!-- #bd -->
 <div id="ft" role="contentinfo"></div>
-</div>
+</div><!-- #doc .yui-t7 -->
 </body>
 </html>
