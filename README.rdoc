@@ -1,4 +1,6 @@
-== Install
+= MeSH Suggestions
+
+== Install and use
   $ [sudo] gem install bio
   $ [sudo] gem install sinatra
   $ git clone git://github.com/seouri/mesh-suggestions.git
@@ -6,3 +8,9 @@
   $ ruby suggest.rb
 
 open http://localhost:4567 in a browser
+
+== Credits
+
+* Philip Trevvett: Provided the core idea.
+
+Copyright (c) 2009 Joon Lee, released under the MIT license
