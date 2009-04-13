@@ -3,7 +3,9 @@ require 'sinatra'
 require 'bio'
 
 get '/' do
-  @articles_count, @suggestions = suggestions(params[:q]) if params[:q]
+  @q = params[:q]
+  @q.strip! unless @q.nil?
+  @articles_count, @suggestions = suggestions(@q) unless (@q.nil? || @q.empty?)
   erb :index
 end
 
