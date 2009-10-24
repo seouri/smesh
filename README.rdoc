@@ -5,7 +5,7 @@
 http://smesh.medvane.org
 
 == Install and use
-  $ [sudo] gem install bio
+  $ [sudo] gem install bio -v 1.3.0
   $ [sudo] gem install sinatra
   $ git clone git://github.com/seouri/smesh.git
   $ cd smesh
